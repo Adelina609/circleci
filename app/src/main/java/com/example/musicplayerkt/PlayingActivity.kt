@@ -4,14 +4,12 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.IBinder
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -32,6 +30,8 @@ class PlayingActivity : AppCompatActivity() {
     private var playIntent: Intent? = null
     private var raw = 0
     private var themeName: String? = null
+    private var zero = 0
+    private var four = 4
 
     private val musicConnection = object : ServiceConnection {
         override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
@@ -49,7 +49,7 @@ class PlayingActivity : AppCompatActivity() {
 
     val position: Int
         get() {
-            for (i in 0..4) {
+            for (i in zero..four) {
 //                if (raw == songsUtil.fillIn().get(i).getRaw()) {
 //                    return i
 //                }

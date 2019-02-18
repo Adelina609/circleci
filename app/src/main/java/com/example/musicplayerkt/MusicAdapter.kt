@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+
 class MusicAdapter(private val list: List<Song>, private val onItemClickListener: OnItemClickListener) :
     RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
 
@@ -28,8 +29,7 @@ class MusicAdapter(private val list: List<Song>, private val onItemClickListener
         init {
             tv_name = view.findViewById(R.id.tv_nameOfSong)
             view.setOnClickListener {
-                val song = list[layoutPosition]
-                onItemClickListener.onItemClick(song)
+                onItemClickListener.onItemClick(list[layoutPosition])
             }
         }
 

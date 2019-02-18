@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             }
         }
-       // adapter = new MusicAdapter(songsUtil.fillIn(), onItemClickListener)
         recyclerView.adapter = adapter
     }
 

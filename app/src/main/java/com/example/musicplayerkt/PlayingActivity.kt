@@ -37,7 +37,7 @@ class PlayingActivity : AppCompatActivity() {
         override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
             val binder = iBinder as MusicService.MusicBinder
             musicSrv = binder.service
-            musicSrv?.setList(songsUtil.fillIn())
+            //musicSrv?.setList(songsUtil.fillIn())
             musicSrv?.currentIdx = position
             musicBound = true
         }
@@ -50,9 +50,9 @@ class PlayingActivity : AppCompatActivity() {
     val position: Int
         get() {
             for (i in 0..4) {
-                if (raw == songsUtil.fillIn().get(i).getRaw()) {
-                    return i
-                }
+//                if (raw == songsUtil.fillIn().get(i).getRaw()) {
+//                    return i
+//                }
             }
             return 0
         }
@@ -79,11 +79,11 @@ class PlayingActivity : AppCompatActivity() {
         start.setOnClickListener { musicSrv?.playSong() }
         next.setOnClickListener {
             musicSrv?.playNext()
-            tv_name.setText(songsUtil.fillIn().get(musicSrv!!.currentIdx).getName())
+            //tv_name.setText(songsUtil.fillIn().get(musicSrv!!.currentIdx).getName())
         }
         prev.setOnClickListener {
             musicSrv?.playPrev()
-            tv_name.setText(songsUtil.fillIn().get(musicSrv!!.currentIdx).getName())
+            //tv_name.setText(songsUtil.fillIn().get(musicSrv!!.currentIdx).getName())
         }
     }
 

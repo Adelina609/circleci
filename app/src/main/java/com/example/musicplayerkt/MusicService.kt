@@ -29,9 +29,7 @@ class MusicService : Service(), MediaPlayer.OnCompletionListener {
             get() = this@MusicService
     }
 
-    override fun onBind(intent: Intent): IBinder? {
-        return musicBind
-    }
+    override fun onBind(intent: Intent): IBinder? = musicBind
 
     fun initMusicPlayer() {
         mediaPlayer?.setWakeMode(

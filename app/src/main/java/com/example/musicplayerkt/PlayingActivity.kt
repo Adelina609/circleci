@@ -30,8 +30,8 @@ class PlayingActivity : AppCompatActivity() {
     private var playIntent: Intent? = null
     private var raw = 0
     private var themeName: String? = null
-    private var zero = 0
-    private var four = 4
+    private var ZERO = 0
+    private var FOUR = 4
 
     private val musicConnection = object : ServiceConnection {
         override fun onServiceConnected(componentName: ComponentName, iBinder: IBinder) {
@@ -49,7 +49,7 @@ class PlayingActivity : AppCompatActivity() {
 
     val position: Int
         get() {
-            for (i in zero..four) {
+            for (i in ZERO..FOUR) {
 //                if (raw == songsUtil.fillIn().get(i).getRaw()) {
 //                    return i
 //                }

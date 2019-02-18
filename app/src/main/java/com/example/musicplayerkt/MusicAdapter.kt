@@ -19,9 +19,8 @@ class MusicAdapter(private val list: List<Song>, private val onItemClickListener
         holder.bind(list[position])
     }
 
-    override fun getItemCount(): Int {
-        return list.size
-    }
+    override fun getItemCount(): Int = list.size
+
 
     inner class MusicViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var tv_name: TextView
